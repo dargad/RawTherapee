@@ -190,6 +190,12 @@ if (NOT DEFINED APPDATADIR)
     endif (UNIX)
 endif (NOT DEFINED APPDATADIR)
 
+if (NOT DEFINED DATA_SEARCH_PATH_)
+    if (UNIX)
+        set (DATA_SEARCH_PATH_ "${DATADIR}")
+    endif (UNIX)
+endif (NOT DEFINED DATA_SEARCH_PATH_)
+
 # non-bundle builds has to use absolute paths
 if (NOT BUILD_BUNDLE AND
     NOT (IS_ABSOLUTE "${BINDIR}" AND IS_ABSOLUTE "${DATADIR}" AND IS_ABSOLUTE "${LIBDIR}" AND
