@@ -190,11 +190,11 @@ if (NOT DEFINED APPDATADIR)
     endif (UNIX)
 endif (NOT DEFINED APPDATADIR)
 
-if (NOT DEFINED DATA_SEARCH_PATH_)
+if (NOT DEFINED RUNTIME_DATA_PREFIX)
     if (UNIX)
-        set (DATA_SEARCH_PATH_ "${DATADIR}")
+        set (RUNTIME_DATA_PREFIX "${DATADIR}")
     endif (UNIX)
-endif (NOT DEFINED DATA_SEARCH_PATH_)
+endif (NOT DEFINED RUNTIME_DATA_PREFIX)
 
 # non-bundle builds has to use absolute paths
 if (NOT BUILD_BUNDLE AND
